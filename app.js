@@ -6,6 +6,9 @@ const userRouter = require('./routes/user');
 const reportRouter = require('./routes/report');
 const blockRouter = require('./routes/block');
 
+const babProfileRouter = require('./routes/babProfile');
+const sulProfileRouter = require('./routes/sulProfile');
+
 const app = express();
 
 app.set('port', process.env.PORT || 5001);
@@ -23,6 +26,9 @@ app.use('/api/auth', authRouter);
 app.use('/api/user', userRouter);
 app.use('/api/report', reportRouter);
 app.use('/api/block', blockRouter);
+
+app.use('/api/babProfile', babProfileRouter);
+app.use('/api/sulProfile', sulProfileRouter);
 
 app.listen(app.get('port'), () => {
     console.log(app.get('port'), '번 포트에서 대기 중');
